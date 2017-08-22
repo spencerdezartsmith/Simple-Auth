@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/spencerdezartsmith/Simple-Auth-Server#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
     "bookshelf": "^0.10.4",
     "express": "^4.15.4",

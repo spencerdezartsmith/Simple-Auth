@@ -7,13 +7,13 @@ exports.signup = (req, res, next) => {
     return res.status(422).send({ error: 'You must provide an email and password!' })
   }
   // search for user with the email
-  User.where('email', email).fetch()
+  User.byEmail(email)
     .then(user => {
       if (user) {
         res.status(422).send({ error: 'Email is already in use.' })
       } else {
         new User({ email, password }).save()
-          .then(savedUser => res.send(savedUser))
+          .then(savedUser => res.send({ success: true }))
       }
     })
 }
