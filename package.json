@@ -1,0 +1,30 @@
+{
+  "name": "Simple-Auth-Server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spencerdezartsmith/Simple-Auth-Server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spencerdezartsmith/Simple-Auth-Server/issues"
+  },
+  "homepage": "https://github.com/spencerdezartsmith/Simple-Auth-Server#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "bookshelf": "^0.10.4",
+    "express": "^4.15.4",
+    "knex": "^0.13.0",
+    "morgan": "^1.8.2",
+    "nodemon": "^1.11.0",
+    "pg": "^7.1.2"
+  }
+}
