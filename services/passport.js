@@ -17,7 +17,7 @@ const localLogin = new LocalStrategy(localOptions, function(email, password, don
         user.comparePasswords(password, function(err, isMatch) {
           if (err) { return done(err) }
           if (!isMatch) {
-            return done(null, false)
+            return done(null, false, { message: 'Invalid credentials' })
           } else {
             return done(null, user)
           }
