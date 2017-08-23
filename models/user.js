@@ -14,9 +14,15 @@ const User = bookshelf.Model.extend({
       .then(hash => {
         model.set('password', hash)
       })
+  },
+  comparePasswords: function(password, callback) {
+    const comparePromise = Promise.promisify(bcrypt.compare)
+    return comparePromise(password, this.get('password'))
+      .then(isMatch => callback(null, isMatch))
+      .catch(err => callback(err))
   }
 }, {
-  byEmail: function(email) {
+  findByEmail: function(email) {
     return this.query({ where: { email }}).fetch()
   },
   findById: function(id) {

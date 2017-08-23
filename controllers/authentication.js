@@ -17,7 +17,7 @@ exports.signup = (req, res, next) => {
     return res.status(422).send({ error: 'You must provide an email and password!' })
   }
   // search for user with the email
-  User.byEmail(email)
+  User.findByEmail(email)
     .then(user => {
       if (user) {
         res.status(422).send({ error: 'Email is already in use.' })
@@ -26,4 +26,9 @@ exports.signup = (req, res, next) => {
           .then(savedUser => res.send({ token: tokenForUser(savedUser) }))
       }
     })
+}
+
+exports.signin = (req, res, next) => {
+  // Already been authenicated
+  res.send({ token: tokenForUser(req.user) })
 }
