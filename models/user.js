@@ -15,6 +15,13 @@ const User = bookshelf.Model.extend({
         model.set('password', hash)
       })
   }
+}, {
+  byEmail: function(email) {
+    return this.query({ where: { email }}).fetch()
+  },
+  findById: function(id) {
+    return this.query({ where: { id }}).fetch()
+  }
 })
 
 module.exports = User
