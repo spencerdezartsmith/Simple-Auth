@@ -5,7 +5,7 @@ const ExtractJwt = require('passport-jwt').ExtractJwt
 const User = require('../models/user')
 const config = require('../config')
 
-localOptions = { usernameField: 'email' }
+const localOptions = { usernameField: 'email' }
 
 const localLogin = new LocalStrategy(localOptions, function(email, password, done) {
   User.findByEmail(email)
